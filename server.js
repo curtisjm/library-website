@@ -9,6 +9,7 @@ const expressLayouts = require('express-ejs-layouts')
 
 // require file used as our router / controller
 const indexRouter = require('./routes/index')
+const authorRouter= require('./routes/authors')
 
 // set view engine
 app.set('view engine', 'ejs')
@@ -23,6 +24,8 @@ app.set('layout', 'layouts/layout')
 app.use(expressLayouts)
 // tell express where our public files will be
 app.use(express.static('public'))
+// use urlencoded because we are sending values via url to our server
+app.use(express.urlencoded({ limit: '10mb', extended: false}))
 
 // used for connection to MongoDB
 const mongoose = require('mongoose')
@@ -35,6 +38,7 @@ db.once('open', () => console.log('Connected to Mongoose'))
 
 // tell app which router to use to handle the root path
 app.use('/', indexRouter)
+app.use('/authors', authorRouter)
 
 // tell app to listen on a certain port
 app.listen(process.env.PORT || 3000)

@@ -7,12 +7,11 @@
     <title>Mybrary</title>
 </head>
 <body>
-    Before
-    <br>
+    <!-- include header from partials folder, have to go one directory back with .. -->
+    <%- include('../partials/header.ejs') %>
+    <%- include('../partials/errorMessage.ejs') %>
     <!-- include all of our other pages in this body -->
     <!-- allows us to only write boilerplate html in one place -->
     <%- body %>
-    <br>
-    After
 </body>
 </html>
