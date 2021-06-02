@@ -10,6 +10,7 @@ const expressLayouts = require('express-ejs-layouts')
 // require file used as our router / controller
 const indexRouter = require('./routes/index')
 const authorRouter= require('./routes/authors')
+const bookRouter = require('./routes/books')
 
 // set view engine
 app.set('view engine', 'ejs')
@@ -39,6 +40,7 @@ db.once('open', () => console.log('Connected to Mongoose'))
 // tell app which router to use to handle the root path
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
+app.use('/books', bookRouter)
 
 // tell app to listen on a certain port
 app.listen(process.env.PORT || 3000)
