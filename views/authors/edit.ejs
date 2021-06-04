@@ -1,6 +1,6 @@
 <h2>Edit Author</h2>
 <!-- where we put fields for our author and submit button -->
-<form action="authors/<%= author.id %>?_method=PUT" method="POST">
+<form action="/authors/<%= author.id %>?_method=PUT" method="POST">
     <!-- use shared input file because inputs code will be shared -->
     <!-- import fields from partial code file -->
     <%- include('_form_fields') %>
