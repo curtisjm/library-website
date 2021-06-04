@@ -6,7 +6,7 @@ if(process.env.NODE_ENV != 'production') {
 const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
-const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 
 // require file used as our router / controller
 const indexRouter = require('./routes/index')
@@ -24,10 +24,11 @@ app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
 // tell app to use express layouts
 app.use(expressLayouts)
+app.use(methodOverride('_method'))
 // tell express where our public files will be
 app.use(express.static('public'))
 // use urlencoded because we are sending values via url to our server
-app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
+app.use(express.urlencoded({ limit: '10mb', extended: false}))
 
 // used for connection to MongoDB
 const mongoose = require('mongoose')
