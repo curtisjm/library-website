@@ -16,14 +16,19 @@
     <!-- import plugins before filepond.js -->
     <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
     <script defer src="/javascripts/fileUpload.js"></script>
+    <link rel="stylesheet" href="/stylesheets/main.css">
     <title>Mybrary</title>
 </head>
 <body>
-    <!-- include header from partials folder, have to go one directory back with .. -->
-    <%- include('../partials/header.ejs') %>
-    <%- include('../partials/errorMessage.ejs') %>
-    <!-- include all of our other pages in this body -->
-    <!-- allows us to only write boilerplate html in one place -->
-    <%- body %>
+    <div class="container">
+        <!-- include header from partials folder, have to go one directory back with .. -->
+        <%- include('../partials/header.ejs') %>
+        <div class="inner-container">
+            <%- include('../partials/errorMessage.ejs') %>
+            <!-- include all of our other pages in this body -->
+            <!-- allows us to only write boilerplate html in one place -->
+            <%- body %>
+        </div>
+    </div>
 </body>
 </html>
