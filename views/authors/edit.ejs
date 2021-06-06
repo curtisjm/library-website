@@ -4,7 +4,8 @@
     <!-- use shared input file because inputs code will be shared -->
     <!-- import fields from partial code file -->
     <%- include('_form_fields') %>
-    <!-- cancel modification of author -->
-    <a href="/authors/<%= author.id %>">Cancel</a>
-    <button type="submit">Update</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-danger" href="/authors/<%= author.id %>">Cancel</a>
+        <button class="btn btn-primary" type="submit">Update</button>
+    </div>
 </form>

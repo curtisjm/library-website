@@ -4,7 +4,8 @@
     <!-- use shared input file because inputs code will be shared -->
     <!-- import fields from partial code file -->
     <%- include('_form_fields') %>
-    <!-- cancel creation of author -->
-    <a href="/authors">Cancel</a>
-    <button type="submit">Create</button>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-danger" href="/authors">Cancel</a>
+        <button class="btn btn-primary" type="submit">Create</button>
+    </div>
 </form>
