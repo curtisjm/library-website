@@ -1,5 +1,7 @@
 <!-- just run on server, don't output to html -->
 <% if(locals.errorMessage != null) { %>
-    <!-- render text from message -->
-    <%= errorMessage %> 
+    <div class="error-message">
+        <!-- render text from message -->
+        <%= errorMessage %> 
+    </div>
 <% } %>
