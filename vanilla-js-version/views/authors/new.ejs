@@ -1,0 +1,11 @@
+<h2 class="page-header">New Author</h2>
+<!-- where we put fields for our author and submit button -->
+<form action="/authors" method="POST">
+    <!-- use shared input file because inputs code will be shared -->
+    <!-- import fields from partial code file -->
+    <%- include('_form_fields') %>
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-danger" href="/authors">Cancel</a>
+        <button class="btn btn-primary" type="submit">Create</button>
+    </div>
+</form>
